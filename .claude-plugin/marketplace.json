@@ -1,26 +1,18 @@
 {
-  "name": "claude-code-warp",
-  "description": "Official Warp terminal integrations for Claude Code",
+  "name": "claude-code-kyon",
+  "description": "Kyon terminal integration for Claude Code",
   "owner": {
-    "name": "Warp",
-    "url": "https://warp.dev"
+    "name": "Kyon",
+    "url": "https://kyon.sh"
   },
   "plugins": [
     {
-      "name": "warp",
-      "description": "Native Warp notifications when Claude completes tasks or needs input",
-      "source": "./plugins/warp",
+      "name": "kyon",
+      "description": "Native Kyon notifications when Claude completes tasks or needs input",
+      "source": "./plugins/kyon",
       "version": "2.1.0",
       "category": "productivity",
-      "tags": ["notifications", "terminal", "warp"]
-    },
-    {
-      "name": "oz-harness-support",
-      "description": "Warp integration for Claude Code in Oz cloud agent environments, including parent-message delivery hooks",
-      "source": "./plugins/oz-harness-support",
-      "version": "1.1.2",
-      "category": "productivity",
-      "tags": ["terminal", "warp", "oz"]
+      "tags": ["notifications", "terminal", "kyon"]
     }
   ]
 }

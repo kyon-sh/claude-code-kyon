@@ -1,0 +1,10 @@
+{
+  "name": "kyon",
+  "description": "Kyon terminal integration for Claude Code - native notifications, and more to come",
+  "version": "2.1.0",
+  "author": {
+    "name": "Kyon",
+    "url": "https://kyon.sh"
+  },
+  "homepage": "https://github.com/ryowave-com/claude-code-kyon"
+}
