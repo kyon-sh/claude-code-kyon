@@ -25,7 +25,7 @@ This powers Kyon's inline status indicators for Claude Code sessions.
 
 ```bash
 # In Claude Code, add the marketplace
-/plugin marketplace add ryowave-com/claude-code-kyon
+/plugin marketplace add kyon-sh/claude-code-kyon
 
 # Install the Kyon plugin
 /plugin install kyon@claude-code-kyon
