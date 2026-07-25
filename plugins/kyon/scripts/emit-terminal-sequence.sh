@@ -59,6 +59,16 @@ emit_terminal_sequence() {
     local seq="$1"
     [ -z "$seq" ] && return 0
 
+    # Inside tmux, a raw OSC is consumed by tmux and never reaches the outer
+    # terminal (Kyon). Wrap it in tmux's passthrough DCS so tmux forwards it:
+    # ESC P tmux ; <seq with every ESC doubled> ESC \. Requires the tmux server
+    # to have `allow-passthrough on` (the Kyon session shim sets this) -- this is
+    # what lets the cli-agent notification survive a tmux-wrapped SSH session.
+    if [ -n "${TMUX:-}" ]; then
+        seq="${seq//$'\x1b'/$'\x1b\x1b'}"
+        seq=$'\x1bPtmux;'"$seq"$'\x1b\\'
+    fi
+
     # Classify the running Claude Code version, if we can.
     local raw="${CLAUDE_CODE_VERSION:-}"
     local ver=""
